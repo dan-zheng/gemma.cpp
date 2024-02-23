@@ -38,8 +38,9 @@ jobs:
         cmakeAppendedArgs: >
           -D CMAKE_C_COMPILER_LAUNCHER=ccache
           -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          -D HWY_ENABLE_TESTS=OFF
         buildWithCMake: true
-        # Explicitly list build targets here.
-        # Building "all" includes test executables and takes much longer.
-        buildWithCMakeArgs: "-- gemma"
+        # # Explicitly list build targets here.
+        # # Building "all" includes test executables and takes much longer.
+        # buildWithCMakeArgs: "-- gemma"
         buildDirectory: '${{ github.workspace }}/build'
